@@ -1,7 +1,14 @@
 package com.renzvi.mss;
 
+import com.renzvi.mss.config.DatabaseInitialize;
+
 public class App {
+	
 	public static void main(String[] args) {
-		System.out.println("Hello World!");
+		
+		// create tables if not exists
+		DatabaseInitialize.createTables();
+		
 	}
+	
 }
