@@ -2,7 +2,7 @@ package com.renzvi.mss.model.enumerator;
 
 public enum MailTypeEnum {
 
-	GMAIL("Gmail", "gmail.com");
+	GMAIL("GMAIL", "gmail.com");
 
 	private String name;
 	private String value;
@@ -12,6 +12,15 @@ public enum MailTypeEnum {
 		this.value = value;
 	}
 
+	public static MailTypeEnum get(String name) {
+		for (MailTypeEnum mailTypeEnum : values()) {
+			if (mailTypeEnum.getName().equals(name)) {
+				return mailTypeEnum;
+			}
+		}
+		return null;
+	}
+	
 	public String getName() {
 		return name;
 	}

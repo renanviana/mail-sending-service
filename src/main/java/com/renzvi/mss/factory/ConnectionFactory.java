@@ -19,9 +19,10 @@ public class ConnectionFactory implements Closeable {
 	}
 
 	public static Connection getInstance() throws SQLException {
-		if (conn.get() == null) {
+		if (conn.get() == null || conn.get().isClosed()) {
 			conn.set(DriverManager.getConnection("jdbc:h2:~/.mail-sending-service-db"));
 		}
+		conn.get().setAutoCommit(true);
 		return conn.get();
 	}
 

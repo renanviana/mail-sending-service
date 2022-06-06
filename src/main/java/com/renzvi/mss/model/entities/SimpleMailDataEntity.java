@@ -1,9 +1,16 @@
-package com.renzvi.mss.model;
+package com.renzvi.mss.model.entities;
 
-public class SimpleMailData {
+public class SimpleMailDataEntity extends Entity {
 
 	private String username;
 	private String email;
+
+	public SimpleMailDataEntity() {
+	}
+
+	public SimpleMailDataEntity(String uuid) {
+		this.uuid = uuid;
+	}
 
 	public String getUsername() {
 		return username;
